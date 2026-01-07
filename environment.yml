@@ -1,0 +1,23 @@
+name: sonarsam
+channels:
+  - pytorch
+  - nvidia
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.10
+  - pytorch>=2.0.0
+  - torchvision>=0.15.0
+  - pytorch-cuda=11.8  # Adjust to 12.1 if you have a newer GPU
+  - numpy
+  - matplotlib
+  - tqdm
+  - pyyaml
+  - scipy
+  - pip
+  - pip:
+      - opencv-python
+      - timm              # Required for many ViT backbones
+      - einops            # Often used in LoRA/SAM adapters
+      - segment-anything  # Official Meta SAM package
+      - git+https://github.com/ChaoningZhang/MobileSAM.git # SonarSAM supports MobileSAM backbones
