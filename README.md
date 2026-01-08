@@ -75,14 +75,13 @@ dataset/
 To train the model from scratch (fine-tuning SAM 2.1 on your data):
 
 ```bash
-python train_SAM.py   --config ./configs/sam.yaml   --save_path ./saves/run_experiment_1   --consistency_weight 0.5
+python train_SAM.py   --config ./configs/sam.yaml   --save_path ./saves/run_experiment_1
 ```
 
 **Key Arguments:**
 
 * `--config`: Path to the YAML configuration file.
 * `--save_path`: Directory to save checkpoints and logs.
-* `--consistency_weight`: Strength of the consistency loss (default: 0.5).
 
 **Output:**
 
