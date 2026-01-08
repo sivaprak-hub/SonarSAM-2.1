@@ -93,37 +93,14 @@ python train_SAM.py   --config ./configs/sam.yaml   --save_path ./saves/run_expe
 
 ## 📊 Evaluation & Visualization
 
-### 1. Run Analytics & Comparison
+## 📈 Performance
 
-Compare your trained model against the base SAM 2.1 model to see per-class improvements.
-
-```bash
-python compare_analytics.py   --config ./configs/sam.yaml   --ckpt_base ./checkpoints/sam2.1_hiera_tiny.pt   --ckpt_best ./saves/run_experiment_1/SonarSAM2_best.pth   --output_dir ./analytics_report
-```
-
-**Generates:**
-
-* `performance.csv`: Detailed IoU scores for all 12 classes.
-* `compare_XXXX.png`: Side-by-side visualizations (Original | GT | Base | Trained).
-
-### 2. Test-Time Augmentation (TTA)
-
-For maximum accuracy, run evaluation with TTA (Flip + Average).
-
-```bash
-python evaluate_tta.py   --config ./configs/sam.yaml   --save_path ./saves/run_experiment_1
-```
-
----
-
-## 📈 Performance (Example)
-
-| Class | Base SAM 2.1 | **SonarSAM 2.1** | Improvement |
-| --- | --- | --- | --- |
-| **Bottle** | 0.654 | **0.892** | +36% |
-| **Propeller** | 0.412 | **0.785** | +90% |
-| **Valve** | 0.550 | **0.820** | +49% |
-| **Mean IoU** | 0.581 | **0.854** | **+47%** |
+| Class | Mobile | Base SAM 2.1 | **SonarSAM 2.1** | Improvement |
+| --- | --- | --- | --- | --- |
+| **Bottle** | 0.767 | 0.808 | **0.823** | +7.31% |
+| **Propeller** | 0.670 | 0.736 | **0.761** | +13.56% |
+| **Valve** | 0.599 | 0.671 | **0.697** | +16.41% |
+| **Mean IoU** | 0.704 | 0.747 | **0.770** | **+9.93%** |
 
 ---
 
